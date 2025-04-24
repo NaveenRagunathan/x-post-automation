@@ -1,59 +1,94 @@
-# X Post Automation Tool
+# X Post Automator
 
-A simple web-based application for automating posts to X (formerly Twitter). This tool allows users to schedule pre-written posts and generate/schedule posts based on provided topics.
+A simple web-based application for automating X (Twitter) posts with scheduling capabilities.
 
 ## Features
 
-- Schedule pre-written tweets
-- Generate and schedule tweets based on topics
-- View, edit, and delete scheduled posts
-- Simple web interface for managing posts
-- Uses X API Free tier
+- Create and schedule posts for X (Twitter)
+- Edit and delete scheduled posts
+- Simple and intuitive user interface
+- Serverless deployment ready
 
-## Setup
+## Prerequisites
 
-1. Clone the repository
+- Node.js 18 or higher
+- X (Twitter) Developer Account
+- Twitter API v2 credentials
+
+## Environment Variables
+
+Create a `.env` file in the root directory with the following variables:
+
+```env
+TWITTER_API_KEY=your_api_key
+TWITTER_API_SECRET=your_api_secret
+TWITTER_ACCESS_TOKEN=your_access_token
+TWITTER_ACCESS_SECRET=your_access_secret
+```
+
+## Local Development
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/NaveenRagunathan/x-post-automation.git
+   cd x-post-automation
+   ```
+
 2. Install dependencies:
    ```bash
    npm install
    ```
-3. Create a `.env` file in the root directory with your X API credentials:
-   ```
-   X_API_KEY=your_api_key
-   X_API_SECRET=your_api_secret
-   X_ACCESS_TOKEN=your_access_token
-   X_ACCESS_TOKEN_SECRET=your_access_token_secret
-   ```
-4. Start the development server:
+
+3. Start the development server:
    ```bash
    npm run dev
    ```
-5. Access the application at `http://localhost:3000`
 
-## Project Structure
+4. Open `http://localhost:3000` in your browser
 
-```
-x-post-automator/
-├── public/           # Static files (HTML, CSS, JS)
-├── src/
-│   ├── controllers/  # Route controllers
-│   ├── models/       # Data models
-│   ├── routes/       # API routes
-│   └── utils/        # Utility functions
-├── .env              # Environment variables
-├── package.json      # Project dependencies
-└── server.js         # Main application file
-```
+## Deployment
 
-## API Documentation
+### Netlify
 
-### Endpoints
+1. Fork this repository
+2. Create a new site on Netlify
+3. Connect your forked repository
+4. Configure build settings:
+   - Build command: `npm run build`
+   - Publish directory: `public`
+   - Functions directory: `netlify/functions`
+5. Add environment variables in Netlify dashboard
+6. Deploy!
 
-- `POST /api/posts` - Create a new scheduled post
-- `GET /api/posts` - Get all scheduled posts
-- `PUT /api/posts/:id` - Update a scheduled post
-- `DELETE /api/posts/:id` - Delete a scheduled post
+### Vercel
+
+1. Fork this repository
+2. Create a new project on Vercel
+3. Import your forked repository
+4. Configure environment variables
+5. Deploy!
+
+## Environment Variables Setup
+
+1. Go to [Twitter Developer Portal](https://developer.twitter.com/)
+2. Create a new project and app
+3. Generate API keys and tokens
+4. Set up the required permissions:
+   - Read and Write permissions
+   - OAuth 1.0a authentication
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-ISC 
+This project is licensed under the ISC License.
+
+## Support
+
+For support, please open an issue in the GitHub repository. 
